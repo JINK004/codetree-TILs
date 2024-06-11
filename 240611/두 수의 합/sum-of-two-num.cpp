@@ -10,8 +10,11 @@ int main() {
     for (int i=0;i<n;i++){
         int tmp;
         cin >> tmp;
-        if(map.find(k-tmp) != map.end()) cnt++;
-        map[tmp] = i+1;
+        if(map.find(k-tmp) != map.end()) {
+            cnt += map[k-tmp];
+
+        }
+        map[tmp]++;
     }
     cout << cnt;   
     return 0;

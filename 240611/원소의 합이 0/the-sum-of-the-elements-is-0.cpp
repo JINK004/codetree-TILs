@@ -19,7 +19,7 @@ int main(){
             for(unordered_map<int,int>::iterator it3=map[2].begin(); it3!=map[2].end(); it3++){
                 int tmp = it->first + it2->first + it3->first;
                 if(map[3].find(-tmp) != map[3].end()){
-                    cnt += (it->second * it2->second * it3->second);
+                    cnt += (it->second * it2->second * it3->second * map[3][-tmp]);
                 }
             }
         }

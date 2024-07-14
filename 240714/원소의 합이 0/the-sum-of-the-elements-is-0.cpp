@@ -14,7 +14,7 @@ void ADD(int lv, int sum) {
     }
     else {
         int num = -sum;
-        if (m[3].find(num) != m[3].end()) cnt++;
+        if (m[3].find(num) != m[3].end()) cnt += m[3][num];
         return;
     }
 
@@ -34,7 +34,8 @@ int main() {
     for (int i = 0; i < n; i++) {
         int tmp;
         cin >> tmp;
-        m[3][tmp] = i;
+        if (m[3].find(tmp) != m[3].end()) m[3][tmp]++;
+        else m[3][tmp] = 1;
     }
     ADD(0, 0);
     cout << cnt;

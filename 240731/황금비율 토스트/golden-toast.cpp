@@ -4,8 +4,6 @@ using namespace std;
 
 int main() {
     list<char> mlist;
-    list<char>::iterator it; 
-    it = mlist.end();
 
     int n, m;
     cin >> n >> m;
@@ -14,32 +12,36 @@ int main() {
         cin >> tmp;
         mlist.push_back(tmp);
     }
+
+    list<char>::iterator it; 
+    it = mlist.end();
+
     for (int i=0;i<m;i++){
         char tmp;
         cin >> tmp;
         if(tmp == 'L'){
             if(it == mlist.begin()) continue;
-            it++;
+            it--;
         }
         else if(tmp == 'R'){
             if(it == mlist.end()) continue;
-            it--;
+            it++;
         }
         else if(tmp == 'D'){
             if(it == mlist.end()) continue;
-            mlist.erase(it);
+            it = mlist.erase(it);
         }
         else if(tmp == 'P'){
             char num;
             cin >> num;
-            mlist.insert(num);
+            mlist.insert(it, num);
         }
         else{
             cout << "ERROR\n";
         }
     }
 
-    for (it=mlist.begin();it<mlist.end();it++){
+    for (it=mlist.begin(); it!=mlist.end(); it++){
         cout << *it;
     }
     return 0;

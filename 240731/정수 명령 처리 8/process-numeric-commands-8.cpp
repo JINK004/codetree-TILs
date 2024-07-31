@@ -33,7 +33,7 @@ int main() {
             cout << mlist.size() << "\n";
         }
         else if(tmp == "empty"){
-            if (mlist.empty()) cout << "0\1\n";
+            if (mlist.empty()) cout << "0\n";
             else cout << "0\n";
         }
         else if(tmp == "front"){
